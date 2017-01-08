@@ -1,10 +1,7 @@
-# import scipy
-# import os
 from sys import argv
 from getopt import getopt
 from sklearn.cluster import KMeans
 from osgeo import gdal
-import spectral
 import numpy
 
 
@@ -12,13 +9,17 @@ def get_arguments():
     if len(argv) < 2:
         return
     arguments = argv[1:]
-    opts, args = getopt(arguments, 'n:i:', ['n=', 'iter='])
+    opts, args = getopt(arguments, 'n:i:fi:fo:', ['n=', 'iter=', 'file-input=', 'file-output='])
     for o, a in opts:
         if o == '-n':
             n = int(a)
-        if o == '-i':
+        elif o == '-i':
             iter = int(a)
-    return n, iter
+        elif o == '-fi':
+            input_file = a
+        elif o == '-fo':
+            output_file = a
+    return n, iter, input_file, output_file
 
 
 def load_bsq_to_array(filename):
