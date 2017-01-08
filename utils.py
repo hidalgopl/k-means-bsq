@@ -40,19 +40,3 @@ def save_result(array, filename):
     numpy.save(filename, array)
     print ("File saved successfully. \n")
 
-
-if __name__ == '__main__':
-    if get_arguments() is not None:
-        print ('ok.')
-        #n, iter, input_file, output_file = get_arguments()
-
-    else:
-        n = int(raw_input('Type number of cluster to create:'))
-        iter = int(raw_input('Type maximum number of iterations:'))
-        input_file = raw_input('Input filename with extension:')
-        output_file = raw_input('Type output filename:')
-
-        array = load_bsq_to_array(input_file)
-        result = k_means(n, iter, array)
-        save_result(result, output_file)
-

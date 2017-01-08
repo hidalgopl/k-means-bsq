@@ -1,4 +1,4 @@
-from k_means import load_bsq_to_array, k_means, save_result
+from utils import load_bsq_to_array, k_means, save_result
 
 n = int(raw_input('Type number of cluster to create:'))
 iter = int(raw_input('Type maximum number of iterations:'))
