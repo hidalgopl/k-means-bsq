@@ -1,6 +1,6 @@
 from sys import argv
 from getopt import getopt
-from sklearn.cluster import KMeans
+from sklearn.cluster import k_means as means
 from osgeo import gdal
 import numpy
 
@@ -31,8 +31,8 @@ def load_bsq_to_array(filename):
     return data
 
 
-def k_means(n, iter, array, verbose=0):
-    result = KMeans(n_clusters=n, max_iter=iter, verbose=verbose).fit(array)
+def k_means(n, iter, array, verbose=False):
+    result = means(X=array, n_clusters=n, max_iter=iter, verbose=verbose)
     return result
 
 
@@ -43,13 +43,16 @@ def save_result(array, filename):
 
 if __name__ == '__main__':
     if get_arguments() is not None:
-        print ('bla')
+        print ('ok.')
+        #n, iter, input_file, output_file = get_arguments()
 
     else:
         n = int(raw_input('Type number of cluster to create:'))
         iter = int(raw_input('Type maximum number of iterations:'))
         input_file = raw_input('Input filename with extension:')
         output_file = raw_input('Type output filename:')
+
         array = load_bsq_to_array(input_file)
         result = k_means(n, iter, array)
         save_result(result, output_file)
+
