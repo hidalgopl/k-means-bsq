@@ -1,0 +1,20 @@
+ENVI
+description = {
+  File Resize Result, x resize factor: 1.000000, y resize factor: 1.000000.
+  [Sat Jan 07 21:04:32 2017]}
+samples = 400
+lines   = 400
+bands   = 2
+header offset = 0
+file type = ENVI Standard
+data type = 2
+interleave = bsq
+sensor type = Unknown
+byte order = 0
+x start = 1646
+y start = 248
+map info = {Geographic Lat/Lon, 1.0000, 1.0000, -15.50000000, 65.30000000, 1.0000000000e-001, 1.0000000000e-001, WGS-84, units=Degrees}
+coordinate system string = {GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]}
+wavelength units = Unknown
+band names = {
+ Resize (Minimum Elevation:dem.bsq), Resize (Maximum Elevation:dem.bsq)}
