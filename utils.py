@@ -9,17 +9,18 @@ def get_arguments():
     if len(argv) < 2:
         return
     arguments = argv[1:]
-    opts, args = getopt(arguments, 'n:i:fi:fo:', ['n=', 'iter=', 'file-input=', 'file-output='])
+    opts, args = getopt(arguments, 'n:t:fi:fo:', ['n=', 't=', 'i=', 'o='])
+    options = {}
     for o, a in opts:
         if o == '-n':
-            n = int(a)
+            options['n'] = int(a)
+        elif o == '-t':
+            options['t'] = int(a)
         elif o == '-i':
-            iter = int(a)
-        elif o == '-fi':
-            input_file = a
-        elif o == '-fo':
-            output_file = a
-    return n, iter, input_file, output_file
+            options['i'] = a
+        elif o == '-o':
+            options['o'] = a
+    return options
 
 
 def load_bsq_to_array(filename):
