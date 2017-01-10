@@ -7,14 +7,16 @@ try:
     input_file = options['i']
     output_file = options['o']
 except:
-    if n is None:
-        n = int(raw_input('Type number of cluster to create:'))
-    if iter is None:
-        iter = int(raw_input('Type maximum number of iterations:'))
-    if input_file is None:
-        input_file = raw_input('Input filename with extension:')
-    if output_file is None:
-        output_file = raw_input('Type output filename:')
+    n = (raw_input('Type number of cluster to create:'))
+    iter = (raw_input('Type maximum number of iterations:'))
+    input_file = raw_input('Input filename with extension:')
+    output_file = raw_input('Type output filename:')
+    try:
+        n = int(n)
+        iter = int(iter)
+    except:
+        n = (raw_input('Type NUMBER of cluster to create:'))
+        iter = (raw_input('Type maximum NUMBER of iterations:'))
 
 array = load_bsq_to_array(input_file)
 result = k_means(n, iter, array)
