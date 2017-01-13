@@ -3,7 +3,7 @@ Utility to cluster *.bsq files using k-means algorithm.
 
 # Description
 Script to cluster Landsat 7 and 8 imagery in ENVI file extension(*.bsq - Band Sequential Data, *.hdr - ENVI header file) using k-means algorithm.
-
+Output format is ENVI format (*.hdr and *.bsq)
 
 # Requirements:
  - Python >=2.7
